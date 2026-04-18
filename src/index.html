@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W79YQTESC1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-W79YQTESC1");
+  </script>
+  <meta charset="utf-8">
+  <title>HeartBond Support - Heartrate Graphing</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="heart rate graphing, pulse rate, heart data, syncing, customization" />
+  <link rel="icon" type="image/png" href="images/icon-384.png">
+  <meta name="theme-color" content="#f4f4f4" id="meta-theme-color">
+  <script>
+    (function () {
+      var choice = "system";
+      try {
+        var K = "heartbond-theme";
+        var raw = localStorage.getItem(K);
+        if (raw === "system" || raw === "classic" || raw === "calm" || raw === "dark") {
+          choice = raw;
+        }
+      } catch (e) {}
+      var resolved = choice === "system"
+        ? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "calm")
+        : choice;
+      document.documentElement.setAttribute("data-theme", resolved);
+    })();
+  </script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
